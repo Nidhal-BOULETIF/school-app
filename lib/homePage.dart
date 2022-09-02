@@ -42,6 +42,7 @@ class _HomePage1State extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amberAccent,
       body: ListView(
         children: <Widget>[
           buildTop(),
