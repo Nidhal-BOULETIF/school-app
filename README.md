@@ -1,4 +1,4 @@
-# scrollable_page
+# School-App
 
 A new Flutter project.
 
