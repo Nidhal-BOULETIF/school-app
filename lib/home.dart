@@ -1,6 +1,10 @@
-// ignore_for_file: deprecated_member_use, non_constant_identifier_names
+// ignore_for_file: avoid_unnecessary_containers,, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:school_app/about.dart';
+import 'package:school_app/login.dart';
+import 'about.dart';
+import 'login.dart';
 
 class Course {
   final String teacherName;
@@ -27,22 +31,37 @@ final List<Course> _courses = <Course>[
       courseTitle: "C sharp Course",
       courseContent:
           "Lorem Ipsum has  Lorem Ipsum hasLorem Ipsum hasLorem Ipsum has"),
-];
+  Course(
+      teacherName: "Tylor",
+      courseTitle: "Swift Course",
+      courseContent:
+          "Lorem Ipsum has  Lorem Ipsum hasLorem Ipsum hasLorem Ipsum has"),
+  Course(
+      teacherName: "Jason",
+      courseTitle: "C sharp Course",
+      courseContent:
+          "Lorem Ipsum has  Lorem Ipsum hasLorem Ipsum hasLorem Ipsum has"),
+  Course(
+      teacherName: "Jason",
+      courseTitle: "C sharp Course",
+      courseContent:
+          "Lorem Ipsum has  Lorem Ipsum hasLorem Ipsum hasLorem Ipsum has"),
+]; 
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePage1State();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePage1State extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   final double coverHeight = 250;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: const Color.fromARGB(245, 245, 245, 245),
       body: ListView(
         children: <Widget>[
           buildTop(),
@@ -56,7 +75,7 @@ class _HomePage1State extends State<HomePage> {
               itemExtent: 220,
               itemBuilder: _list_temBuilder,
             ),
-          )
+          ),
         ],
       ),
     );
@@ -94,7 +113,8 @@ class _HomePage1State extends State<HomePage> {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(
-                  'https://play-lh.googleusercontent.com/0H0-y6kxTs-n1VgKRhmy69FfQfksfeX_Oy5MfY_JfUWUwvC2oqbmab2-yIce4V4ssA'))));
+                  'https://play-lh.googleusercontent.com/0H0-y6kxTs-n1VgKRhmy69FfQfksfeX_Oy5MfY_JfUWUwvC2oqbmab2-yIce4V4ssA')
+                )));
 
   // LogIn And About button Builder
   Widget buildButtons() => Center(
@@ -106,19 +126,30 @@ class _HomePage1State extends State<HomePage> {
               'About',
               style: TextStyle(fontSize: 20.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // Navigate to the about screen
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => const AboutScreen())
+              );
+            },
           ),
         ),
         Container(
+          height: 40,
           margin: const EdgeInsets.fromLTRB(0, 10, 0, 60),
           child: FlatButton(
             color: const Color.fromARGB(227, 255, 68, 68),
             textColor: Colors.white,
-            onPressed: () {},
             child: const Text(
               'LogIn',
               style: TextStyle(fontSize: 20.0),
             ),
+            onPressed: () {
+              // Navigate to the Login Screen
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LoginScreen())
+              );
+            },
           ),
         ),
       ]));

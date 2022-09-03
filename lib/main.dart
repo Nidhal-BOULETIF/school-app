@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'homePage.dart';
+import 'home.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -11,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'School-App-changed',
-      home: HomePage(),
+      title: 'School-App',
+      home: HomeScreen(),
     );
   }
 }
